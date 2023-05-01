@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Android Features</string>
+    <string name="make_call">Make Call</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="enter_your_message">Enter your message</string>
+    <string name="enter_mail_id">Enter Mail ID</string>
+    <string name="enter_subject">Enter Subject</string>
+    <string name="send_email">Send Email</string>
+    <string name="mic_instruction">Please tap the microphone to speak</string>
+    <string name="speech_to_text">Speech to Text</string>
+    <string name="get_contacts">Get Contacts</string>
+    <string name="name">Name:</string>
+    <string name="number">Number:</string>
+    <string name="sample_name">JungleMystic</string>
+    <string name="sample_number">8309583550</string>
+    <string name="search_here">Search here…</string>
+</resources>

@@ -69,7 +69,7 @@ class ContactsActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
             recyclerView.adapter = adapter
 
             adapter.setOnItemClickListener(object: ContactsAdapter.onItemClickListener {
-                override fun onItmeClick(position: Int) {
+                override fun onItemClick(position: Int) {
 
                     val contact = contactsList[position]
                     val number = contact.number
@@ -113,7 +113,7 @@ class ContactsActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
                         adapter = ContactsAdapter(this@ContactsActivity, contactsList)
                         recyclerView.adapter = adapter
                         adapter.setOnItemClickListener(object: ContactsAdapter.onItemClickListener {
-                            override fun onItmeClick(position: Int) {
+                            override fun onItemClick(position: Int) {
                                 val contact = contactsList[position]
                                 val number = contact.number
 

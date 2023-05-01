@@ -17,7 +17,7 @@ class ContactsAdapter(
     private lateinit var mListener: onItemClickListener
 
     interface onItemClickListener {
-        fun onItmeClick(position: Int)
+        fun onItemClick(position: Int)
     }
 
     fun setOnItemClickListener(listener: onItemClickListener) {
@@ -30,7 +30,7 @@ class ContactsAdapter(
 
         init {
             itemView.setOnClickListener {
-                listener.onItmeClick(adapterPosition)
+                listener.onItemClick(adapterPosition)
             }
         }
     }

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    android:layout_margin="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/name_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/name_cl"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/sample_name"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/name_head"
+            app:layout_constraintTop_toTopOf="@id/name_head"
+            app:layout_constraintBottom_toBottomOf="@id/name_head"
+            android:layout_marginStart="45dp"/>
+
+        <TextView
+            android:id="@+id/number_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/name_head"
+            app:layout_constraintTop_toBottomOf="@id/name_cl"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/number_cl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/sample_number"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/name_cl"
+            app:layout_constraintTop_toTopOf="@id/number_head"/>
+
+        <TextView
+            android:id="@+id/call_Type_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/call_type"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/number_head"
+            app:layout_constraintTop_toBottomOf="@id/number_cl"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/call_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/missed"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/number_cl"
+            app:layout_constraintTop_toTopOf="@id/call_Type_head"/>
+
+        <TextView
+            android:id="@+id/call_duration_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/duration"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/call_Type_head"
+            app:layout_constraintTop_toBottomOf="@id/call_type"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1 hr"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/call_type"
+            app:layout_constraintTop_toTopOf="@id/call_duration_head"/>
+
+        <TextView
+            android:id="@+id/date_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/call_duration_head"
+            app:layout_constraintTop_toBottomOf="@id/call_duration_head"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/sample_date"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/duration"
+            app:layout_constraintTop_toTopOf="@id/date_head"
+            app:layout_constraintBottom_toBottomOf="@id/date_head"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

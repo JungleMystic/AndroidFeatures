@@ -15,4 +15,10 @@
     <string name="sample_name">JungleMystic</string>
     <string name="sample_number">8309583550</string>
     <string name="search_here">Search here…</string>
+    <string name="call_history">Call History</string>
+    <string name="call_type">Call Type:</string>
+    <string name="missed">Missed</string>
+    <string name="duration">Duration:</string>
+    <string name="date">Date:</string>
+    <string name="sample_date">01-05-2023</string>
 </resources>

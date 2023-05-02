@@ -39,5 +39,10 @@ class MainActivity : AppCompatActivity() {
             val contactsIntent = Intent(this, ContactsActivity::class.java)
             startActivity(contactsIntent)
         }
+
+        binding.callHistoryButton.setOnClickListener {
+            val callHistoryIntent = Intent(this, CallHistoryActivity::class.java)
+            startActivity(callHistoryIntent)
+        }
     }
 }

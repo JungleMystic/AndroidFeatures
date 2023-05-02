@@ -28,7 +28,7 @@
             android:layout_marginStart="20dp"/>
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/name_cl"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             tools:text="@string/sample_name"
@@ -48,19 +48,19 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/name_head"
-            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name_cl"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="5dp"/>
 
         <TextView
-            android:id="@+id/number"
+            android:id="@+id/number_cl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="@string/sample_number"
             android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintStart_toStartOf="@id/name_cl"
             app:layout_constraintTop_toTopOf="@id/number_head"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

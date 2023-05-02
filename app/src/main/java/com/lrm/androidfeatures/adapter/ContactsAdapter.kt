@@ -25,8 +25,8 @@ class ContactsAdapter(
     }
 
     class ContactsViewHolder(view: View, listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
-        val name = view.findViewById<TextView>(R.id.name)
-        val number = view.findViewById<TextView>(R.id.number)
+        val name = view.findViewById<TextView>(R.id.name_cl)
+        val number = view.findViewById<TextView>(R.id.number_cl)
 
         init {
             itemView.setOnClickListener {

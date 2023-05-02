@@ -1,9 +1,11 @@
 package com.lrm.androidfeatures.activities
 
 import android.Manifest
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.lrm.androidfeatures.databinding.ActivityCallBinding
@@ -18,6 +20,7 @@ class CallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
     companion object {
         const val CALL_PERMISSION_CODE = 100
+        const val CONTACT_REQUEST_CODE = 500
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +28,14 @@ class CallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
         binding = ActivityCallBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.pickContact.setOnClickListener {
+            binding.phoneNumber.text.clear()
+
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = ContactsContract.CommonDataKinds.Phone.CONTENT_TYPE
+            startActivityForResult(intent, CONTACT_REQUEST_CODE)
+        }
 
         binding.callButton.setOnClickListener {
 
@@ -40,7 +51,22 @@ class CallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                 requestPermissions()
             }
         }
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == CONTACT_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            val contactUri = data?.data ?: return
+            val projection = arrayOf(ContactsContract.CommonDataKinds.Phone.NUMBER)
+            val contactNum = contentResolver.query(
+                contactUri,projection,null,null,null
+            )
+
+            if (contactNum?.moveToFirst()!!) {
+                binding.phoneNumber.setText(contactNum.getString(0))
+            }
+        }
     }
 
     private fun makeCall(phoneNumber: String) {

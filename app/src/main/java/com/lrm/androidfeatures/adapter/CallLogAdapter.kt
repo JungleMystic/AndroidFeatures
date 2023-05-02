@@ -36,7 +36,7 @@ class CallLogAdapter(
         holder.name.text = item.name
         holder.number.text = item.number
         holder.callType.text = item.callType
-        holder.duration.text = item.duration
+        holder.duration.text = "${item.duration} seconds"
         holder.date.text = item.date
     }
 

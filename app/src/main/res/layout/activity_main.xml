@@ -57,6 +57,13 @@
             android:text="@string/call_history"
             android:layout_marginTop="20dp"/>
 
+        <Button
+            android:id="@+id/flash_light_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/flash_light"
+            android:layout_marginTop="20dp"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

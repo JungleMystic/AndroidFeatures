@@ -44,5 +44,10 @@ class MainActivity : AppCompatActivity() {
             val callHistoryIntent = Intent(this, CallHistoryActivity::class.java)
             startActivity(callHistoryIntent)
         }
+
+        binding.flashLightButton.setOnClickListener {
+            val flashIntent = Intent(this, FlashLightActivity::class.java)
+            startActivity(flashIntent)
+        }
     }
 }

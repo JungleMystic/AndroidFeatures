@@ -1,12 +1,12 @@
 package com.lrm.androidfeatures.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.lrm.androidfeatures.databinding.ActivityVoiceBinding
 import java.util.Locale
 

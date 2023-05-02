@@ -14,7 +14,6 @@ import com.lrm.androidfeatures.adapter.ContactsAdapter
 import com.lrm.androidfeatures.databinding.ActivityContactsBinding
 import com.lrm.androidfeatures.model.Contacts
 import com.vmadalin.easypermissions.EasyPermissions
-import com.vmadalin.easypermissions.EasyPermissions.hasPermissions
 import com.vmadalin.easypermissions.dialogs.SettingsDialog
 
 class ContactsActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {

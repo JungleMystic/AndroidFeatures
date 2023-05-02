@@ -11,7 +11,6 @@ import com.lrm.androidfeatures.adapter.CallLogAdapter
 import com.lrm.androidfeatures.databinding.ActivityCallHistoryBinding
 import com.lrm.androidfeatures.model.CallLogModel
 import com.vmadalin.easypermissions.EasyPermissions
-import com.vmadalin.easypermissions.EasyPermissions.hasPermissions
 import com.vmadalin.easypermissions.dialogs.SettingsDialog
 import java.util.Date
 

@@ -48,14 +48,16 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/get_contacts"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:clickable="false"/>
 
         <Button
             android:id="@+id/call_history_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/call_history"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:clickable="false"/>
 
         <Button
             android:id="@+id/flash_light_button"
@@ -65,5 +67,17 @@
             android:layout_marginTop="20dp"/>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/fingerprint_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        tools:text="Biometric security available"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

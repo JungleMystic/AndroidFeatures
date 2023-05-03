@@ -51,6 +51,7 @@ class CallHistoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallb
 
         if (callLogs !=  null) {
             while (callLogs.moveToNext()) {
+                val name = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.CACHED_NAME))
                 val number = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.NUMBER))
                 val callType = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.TYPE))
                 val duration = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.DURATION))
@@ -67,7 +68,7 @@ class CallHistoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallb
                     5 -> type = "Rejected"
                 }
 
-                callLogList.add(CallLogModel("Empty", number, type, duration, fullDate))
+                callLogList.add(CallLogModel(name, number, type, duration, fullDate))
             }
         }
 

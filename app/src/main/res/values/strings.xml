@@ -33,4 +33,5 @@
     <string name="get_location">Get Location</string>
     <string name="location">Location</string>
     <string name="map_view">Map View</string>
+    <string name="online">Online</string>
 </resources>

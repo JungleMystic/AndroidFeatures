@@ -6,9 +6,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
+import android.net.ConnectivityManager
+import android.net.Network
 import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -50,6 +53,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        checkInternet()
 
         binding.apply {
             viewFlipper.flipInterval = 2000
@@ -104,6 +109,24 @@ class MainActivity : AppCompatActivity() {
         binding.locationButton.setOnClickListener {
             val locationIntent = Intent(this, LocationActivity::class.java)
             startActivity(locationIntent)
+        }
+    }
+
+    private fun checkInternet() {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            connectivityManager.registerDefaultNetworkCallback(object : ConnectivityManager.NetworkCallback() {
+                override fun onAvailable(network: Network) {
+                    super.onAvailable(network)
+                    Toast.makeText(this@MainActivity, "Connected", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onLost(network: Network) {
+                    super.onLost(network)
+                    Toast.makeText(this@MainActivity, "Disconnected", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 

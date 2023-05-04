@@ -88,6 +88,11 @@ class MainActivity : AppCompatActivity() {
             val flashIntent = Intent(this, FlashLightActivity::class.java)
             startActivity(flashIntent)
         }
+
+        binding.soundButton.setOnClickListener {
+            val soundIntent = Intent(this, RingerActivity::class.java)
+            startActivity(soundIntent)
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.P)
@@ -95,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         val biometricPrompt = BiometricPrompt.Builder(this)
             .setTitle("Use Fingerprint")
             .setSubtitle("Authentication is required to continue")
-            .setDescription("This app uses biometric authentication to protect your data")
+            .setDescription("This app uses fingerprint to protect your data")
             .setNegativeButton("Cancel", this.mainExecutor, {dialogInterface, i ->
                 notifyUser("Authentication cancelled")
             }).build()
@@ -116,7 +121,6 @@ class MainActivity : AppCompatActivity() {
 
         if (!keyguardManager.isKeyguardSecure) {
             notifyUser("Lock screen security not enabled in Settings")
-            binding.fingerprintMessage.text = "Lock screen security not enabled in Settings"
             return false
         }
 
@@ -125,7 +129,6 @@ class MainActivity : AppCompatActivity() {
             != PackageManager.PERMISSION_GRANTED
         ) {
             notifyUser("Fingerprint authentication permission not enabled")
-            binding.fingerprintMessage.text = "Fingerprint authentication permission not enabled"
             return false
         }
         return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {

@@ -22,4 +22,6 @@
     <string name="date">Date:</string>
     <string name="sample_date">01-05-2023</string>
     <string name="flash_light">Flash Light</string>
+    <string name="sound_control">Sound Control</string>
+    <string name="ring_mode">Current mode is in %1$s</string>
 </resources>

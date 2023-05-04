@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.lrm.androidfeatures.R
 import com.lrm.androidfeatures.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.apply {
+            viewFlipper.flipInterval = 2000
+            viewFlipper.setInAnimation(applicationContext, android.R.anim.fade_in)
+            viewFlipper.setOutAnimation(applicationContext, android.R.anim.fade_out)
+        }
 
         checkBiometricSupport()
 
@@ -92,6 +99,11 @@ class MainActivity : AppCompatActivity() {
         binding.soundButton.setOnClickListener {
             val soundIntent = Intent(this, RingerActivity::class.java)
             startActivity(soundIntent)
+        }
+
+        binding.locationButton.setOnClickListener {
+            val locationIntent = Intent(this, LocationActivity::class.java)
+            startActivity(locationIntent)
         }
     }
 

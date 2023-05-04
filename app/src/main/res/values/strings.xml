@@ -24,4 +24,13 @@
     <string name="flash_light">Flash Light</string>
     <string name="sound_control">Sound Control</string>
     <string name="ring_mode">Current mode is in %1$s</string>
+    <string name="blink">Blink</string>
+    <string name="make_a_call">Make a call</string>
+    <string name="control_sounds">Control Sounds</string>
+    <string name="turn_on_flashlight">Turn on Flashlight</string>
+    <string name="biometric_authentication">Biometric Authentication</string>
+    <string name="turn_flashlight_on_off">Turn Flashlight on/ off</string>
+    <string name="get_location">Get Location</string>
+    <string name="location">Location</string>
+    <string name="map_view">Map View</string>
 </resources>

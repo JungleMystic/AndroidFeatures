@@ -29,6 +29,8 @@ class CallActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         binding = ActivityCallBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         binding.pickContact.setOnClickListener {
             binding.phoneNumber.text.clear()
 

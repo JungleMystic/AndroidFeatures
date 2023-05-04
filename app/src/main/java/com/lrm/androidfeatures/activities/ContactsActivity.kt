@@ -31,6 +31,8 @@ class ContactsActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
         binding = ActivityContactsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         recyclerView = binding.recyclerView
 
         if (hasPermissions()) {

@@ -22,6 +22,8 @@ class VoiceActivity : AppCompatActivity() {
         binding = ActivityVoiceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         activityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback { result ->  

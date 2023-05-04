@@ -65,12 +65,264 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ViewFlipper
+                android:id="@+id/view_flipper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:autoStart="true"
+                android:layout_marginTop="30dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/call_icon"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/make_a_call"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/sms_icon"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/send_sms"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/email_icon"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/send_email"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/speech_to_text_icon"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/speech_to_text"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/contacts_icon"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/get_contacts"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/call_history_icon"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/call_history"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/fingerprint_icon"/>
+
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/biometric_authentication"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/flash_on"/>
+
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/turn_on_flashlight"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/sound_icon"/>
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/control_sounds"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/location_icon"/>
+
+                    <TextView
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/get_location"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/text_font"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </ViewFlipper>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_flipper"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -164,11 +416,28 @@
                         android:id="@+id/sound_button"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/sound_control"
+                        android:text="@string/control_sounds"
                         android:layout_marginStart="40dp"
                         android:backgroundTint="@color/button"/>
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <Button
+                        android:id="@+id/location_button"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/get_location"
+                        android:backgroundTint="@color/button"/>
+
+                </LinearLayout>
+
 
             </LinearLayout>
 

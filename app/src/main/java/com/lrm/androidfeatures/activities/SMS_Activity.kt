@@ -31,6 +31,8 @@ class SMS_Activity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         binding = ActivitySmsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         binding.pickContact.setOnClickListener {
             binding.phoneNumber.text.clear()
 

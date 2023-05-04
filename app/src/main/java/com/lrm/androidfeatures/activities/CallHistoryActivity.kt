@@ -29,6 +29,8 @@ class CallHistoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallb
         binding = ActivityCallHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         recyclerView = binding.recyclerView
 
         if (hasPermissions()) {

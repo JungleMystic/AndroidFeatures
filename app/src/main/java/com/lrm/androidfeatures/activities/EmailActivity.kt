@@ -17,6 +17,8 @@ class EmailActivity : AppCompatActivity() {
         binding = ActivityEmailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         binding.sendEmailButton.setOnClickListener {
             val emailAddress = binding.emailAddress.text.toString()
             val emailSubject = binding.emailSubject.text.toString()

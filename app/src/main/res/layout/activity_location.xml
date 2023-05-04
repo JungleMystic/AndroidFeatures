@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CallHistoryActivity">
+    tools:context=".activities.LocationActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -37,7 +37,7 @@
                     android:id="@+id/activity_icon"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/call_history_icon"
+                    android:src="@drawable/location_icon"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/back_icon"
@@ -47,7 +47,7 @@
                     android:id="@+id/activity_name"
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/call_history"
+                    android:text="@string/get_location"
                     android:textColor="@color/text"
                     android:textSize="28sp"
                     android:textStyle="bold"
@@ -63,27 +63,51 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:queryHint="@string/search_here"
-        app:iconifiedByDefault="false"
-        app:queryBackground="@android:color/transparent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar"
-        app:layout_constraintBottom_toTopOf="@id/recycler_view"/>
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/get_location"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/app_bar"
+    app:layout_constraintStart_toStartOf="parent"
+    android:text="@string/get_location"
+    android:layout_marginTop="40dp"
+    android:layout_marginStart="20dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+<TextView
+    android:id="@+id/location_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/location"
+    android:textSize="22sp"
+    android:textStyle="bold"
+    android:textColor="@color/black"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/get_location"
+    android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/location_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/search_view"
+        tools:text="@string/location"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/call_log_list_item"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:scrollbars="vertical"/>
+        app:layout_constraintTop_toBottomOf="@id/location_title"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/map_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/location_data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/map_view"
+        android:layout_marginTop="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

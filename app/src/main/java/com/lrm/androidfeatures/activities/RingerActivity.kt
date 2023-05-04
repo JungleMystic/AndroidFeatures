@@ -22,6 +22,8 @@ class RingerActivity : AppCompatActivity() {
         binding = ActivityRingerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.M

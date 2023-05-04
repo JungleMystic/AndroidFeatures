@@ -5,9 +5,9 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.hardware.camera2.CameraManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.lrm.androidfeatures.R
 import com.lrm.androidfeatures.databinding.ActivityFlashLightBinding
 import com.vmadalin.easypermissions.EasyPermissions
@@ -27,8 +27,11 @@ class FlashLightActivity : AppCompatActivity(), EasyPermissions.PermissionCallba
         binding = ActivityFlashLightBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.backIcon.setOnClickListener { onBackPressed() }
+
         if (hasPermissions()) {
             switchFlashLight()
+            blinkFlashlight()
         } else {
             requestPermissions()
         }
@@ -58,6 +61,32 @@ class FlashLightActivity : AppCompatActivity(), EasyPermissions.PermissionCallba
                     }
                 }
 
+            } else {
+                requestPermissions()
+            }
+        }
+    }
+
+    private fun blinkFlashlight() {
+
+        val cameraManager = getSystemService(Context.CAMERA_SERVICE) as CameraManager
+
+        binding.blinkButton.setOnClickListener {
+            if (hasPermissions()) {
+                if (packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)) {
+                    var light = false
+                    val blinkSequence = "101010101010101010"
+                    for (i in blinkSequence.indices) {
+                        if (blinkSequence[i] == '1') {
+                            light = true
+                        } else light = false
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            cameraManager.setTorchMode(cameraManager.cameraIdList[0], light)
+                        }
+                        Thread.sleep(100)
+                    }
+                }
             } else {
                 requestPermissions()
             }

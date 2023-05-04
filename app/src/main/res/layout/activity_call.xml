@@ -6,6 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".activities.CallActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/app_bar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/back_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+                <ImageView
+                    android:id="@+id/activity_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/call_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/back_icon"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/activity_name"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/make_a_call"
+                    android:textColor="@color/text"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/text_font"
+                    app:layout_constraintTop_toTopOf="@id/activity_icon"
+                    app:layout_constraintBottom_toBottomOf="@id/activity_icon"
+                    app:layout_constraintStart_toEndOf="@id/activity_icon"
+                    android:layout_marginStart="20dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +98,8 @@
                 android:id="@+id/pick_contact"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_contact"/>
+                android:src="@drawable/ic_contact"
+                app:tint="@color/button"/>
 
         </LinearLayout>
 
@@ -49,7 +109,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/make_call"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/button"/>
     </LinearLayout>
 
 

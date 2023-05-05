@@ -110,6 +110,11 @@ class MainActivity : AppCompatActivity() {
             val locationIntent = Intent(this, LocationActivity::class.java)
             startActivity(locationIntent)
         }
+
+        binding.showPdf.setOnClickListener {
+            val pdfIntent = Intent(this, PDF_Activity::class.java)
+            startActivity(pdfIntent)
+        }
     }
 
     private fun checkInternet() {

@@ -34,4 +34,5 @@
     <string name="location">Location</string>
     <string name="map_view">Map View</string>
     <string name="online">Online</string>
+    <string name="show_pdf">Show PDF</string>
 </resources>

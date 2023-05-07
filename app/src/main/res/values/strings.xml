@@ -35,4 +35,6 @@
     <string name="map_view">Map View</string>
     <string name="online">Online</string>
     <string name="show_pdf">Show PDF</string>
+    <string name="watch_youtube">Watch YouTube</string>
+    <string name="toggle_full_screen">toggle full screen</string>
 </resources>

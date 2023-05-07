@@ -32,6 +32,9 @@
         android:theme="@style/Theme.AndroidFeatures"
         tools:targetApi="31">
         <activity
+            android:name=".activities.WatchYoutubeActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.PDF_Activity"
             android:exported="false" />
         <activity

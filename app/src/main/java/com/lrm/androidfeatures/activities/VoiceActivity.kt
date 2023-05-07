@@ -7,6 +7,7 @@ import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.lrm.androidfeatures.R
 import com.lrm.androidfeatures.databinding.ActivityVoiceBinding
 import java.util.Locale
 
@@ -35,6 +36,16 @@ class VoiceActivity : AppCompatActivity() {
                         data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS) as ArrayList<String>
 
                     binding.resultText.text = speakResult[0]
+
+                    when (binding.resultText.text.toString().toLowerCase()) {
+                     "run" -> binding.dogImage.setImageResource(R.drawable.run_image)
+                     "sit" -> binding.dogImage.setImageResource(R.drawable.sit_image)
+                     "sleep" -> binding.dogImage.setImageResource(R.drawable.sleep_image)
+                     "play" -> binding.dogImage.setImageResource(R.drawable.play_image)
+                     "eat" -> binding.dogImage.setImageResource(R.drawable.food_image)
+                     "handshake" -> binding.dogImage.setImageResource(R.drawable.hand_shake_image)
+                     else -> binding.dogImage.setImageResource(R.drawable.sit_image)
+                    }
                 }
             })
 

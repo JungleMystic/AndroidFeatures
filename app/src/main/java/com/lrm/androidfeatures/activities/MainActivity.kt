@@ -11,12 +11,10 @@ import android.net.Network
 import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
-import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.lrm.androidfeatures.R
 import com.lrm.androidfeatures.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -114,6 +112,11 @@ class MainActivity : AppCompatActivity() {
         binding.showPdf.setOnClickListener {
             val pdfIntent = Intent(this, PDF_Activity::class.java)
             startActivity(pdfIntent)
+        }
+
+        binding.watchYoutube.setOnClickListener {
+            val youtubeIntent = Intent(this, WatchYoutubeActivity::class.java)
+            startActivity(youtubeIntent)
         }
     }
 

@@ -9,6 +9,7 @@ import android.provider.ContactsContract
 import android.telephony.SmsManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.lrm.androidfeatures.activities.SMS_Activity.Companion.SMS_PERMISSION_CODE
 import com.lrm.androidfeatures.databinding.ActivitySmsBinding
 import com.vmadalin.easypermissions.EasyPermissions
 import com.vmadalin.easypermissions.dialogs.SettingsDialog
@@ -77,13 +78,8 @@ class SMS_Activity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         }
     }
 
-    fun sendSMS(phoneNumber: String, message: String) {
-        val smsManager: SmsManager
-        if(Build.VERSION.SDK_INT >= 23) {
-            smsManager = this.getSystemService(SmsManager::class.java)
-        } else {
-            smsManager = SmsManager.getDefault()
-        }
+    private fun sendSMS(phoneNumber: String, message: String) {
+        val smsManager: SmsManager = SmsManager.getDefault()
 
         smsManager.sendTextMessage(phoneNumber, null, message, null, null)
     }

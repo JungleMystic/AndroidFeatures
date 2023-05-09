@@ -121,6 +121,6 @@ class FlashLightActivity : AppCompatActivity(), EasyPermissions.PermissionCallba
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }
 }

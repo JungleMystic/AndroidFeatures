@@ -53,11 +53,15 @@ class CallHistoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallb
 
         if (callLogs !=  null) {
             while (callLogs.moveToNext()) {
-                val name = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.CACHED_NAME))
+                var name = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.CACHED_NAME))
                 val number = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.NUMBER))
                 val callType = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.TYPE))
                 val duration = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.DURATION))
                 val date = callLogs.getString(callLogs.getColumnIndex(CallLog.Calls.DATE))
+
+                if(name == null) {
+                    name = ""
+                }
 
                 var type = ""
 
